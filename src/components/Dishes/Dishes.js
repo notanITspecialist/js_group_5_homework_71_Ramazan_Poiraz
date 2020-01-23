@@ -105,15 +105,15 @@ const Dishes = props => {
             <ModalForm show={show.show} close={closeModal}>
                 <Form onSubmit={addDish}>
                     <FormGroup>
-                        <Label for="exampleEmail">Title</Label>
+                        {/*<Label for="exampleEmail">Title</Label>*/}
                         <Input required onChange={addDishChange} value={addDishInfo.title} type="text" name="title" id="exampleEmail" placeholder="Title" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="exampleEmail">Price</Label>
+                        {/*<Label for="exampleEmail">Price</Label>*/}
                         <Input required onChange={addDishChange} value={addDishInfo.price} type='number' name="price" id="exampleEmail" placeholder="Price" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="exampleEmail">Src</Label>
+                        {/*<Label for="exampleEmail">Src</Label>*/}
                         <Input required onChange={addDishChange} value={addDishInfo.imageLink} type="text" name="imageLink" id="exampleEmail" placeholder="imageLink" />
                     </FormGroup>
                     <Button color="secondary">Add</Button>

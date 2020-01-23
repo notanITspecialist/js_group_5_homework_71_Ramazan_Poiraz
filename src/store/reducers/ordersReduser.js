@@ -7,6 +7,7 @@ const initialState = {
 
 const ordersReducer = ( state = initialState, action ) => {
     if(action.type === ORDERS_RESPONSE){
+        console.log(action.data)
         for(let key in action.data){
             action.data[key].totalPrice = 150
         }
@@ -22,7 +23,7 @@ const ordersReducer = ( state = initialState, action ) => {
     if(action.type === ADD_PRICE_LIST){
         const priceList = {};
         for(let key in action.data){
-            priceList[action.data[key].title] = parseInt(action.data[key].price)
+            priceList[key] = parseInt(action.data[key].price)
         }
         return {...state, priceList: priceList}
     }

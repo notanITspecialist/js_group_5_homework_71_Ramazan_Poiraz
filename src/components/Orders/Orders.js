@@ -29,25 +29,25 @@ const Orders = props => {
                     {Object.keys(props.orders[elem]).map(inElem => inElem !== 'totalPrice' && (
                         <ListGroupItem key={inElem} >
                     <span>
-                        {inElem}: {props.orders[elem][inElem]}
+                        {props.prices[inElem].title}: {props.orders[elem][inElem]}
                     </span>
-                            <span style={{float: 'right', marginRight: '80%', fontWeight: 'bold'}}>
+                            <span style={{float: 'right', marginRight: '70%', fontWeight: 'bold'}}>
                         {props.priceList[inElem] * props.orders[elem][inElem]} KGS
                     </span>
                         </ListGroupItem>
                     ))}
                     <ListGroupItem> Delivery: 150 </ListGroupItem>
-                    <ListGroupItem> Total: {props.orders[elem].totalPrice} </ListGroupItem>
+                    <ListGroupItem> Total: <b>{props.orders[elem].totalPrice}</b> </ListGroupItem>
                     <Button color="secondary" onClick={() => completeOrder(elem)}>Complete order</Button>
                 </ListGroup>
             </ListGroupItem> :
             <ListGroupItem>
                 <ListGroup>
-                    <ListGroupItem>Заказ ({elem}) имеет неверные данные</ListGroupItem>
+                    <ListGroupItem>Заказ ({elem}) имеет неверную информацию</ListGroupItem>
                     <Button color="secondary" onClick={() => completeOrder(elem)}>Complete order</Button>
                 </ListGroup>
             </ListGroupItem>
-    ))
+    ));
 
     return (
         <div>
